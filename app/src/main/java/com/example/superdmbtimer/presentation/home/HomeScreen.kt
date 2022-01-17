@@ -17,6 +17,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringArrayResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -35,15 +37,15 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
 
     HomeScaffold(
         name = state.name,
-        remain = state.remain,
+        left = state.remain,
         percent = state.donePercent,
-        done = state.done,
+        past = state.done,
         navigate = { viewModel.action(HomeAction.Navigate) }
     )
 }
 
 @Composable
-fun HomeScaffold(name: String, remain: Int, percent: Float, done: Int, navigate: () -> Unit) {
+fun HomeScaffold(name: String, left: Int, percent: Float, past: Int, navigate: () -> Unit) {
 
     Column {
         HomeTopBar(navigate)
@@ -52,7 +54,7 @@ fun HomeScaffold(name: String, remain: Int, percent: Float, done: Int, navigate:
 
         Text(
             modifier = Modifier.align(Alignment.CenterHorizontally),
-            text = "$name идет к своей цели",
+            text = "$name " + stringResource(R.string.home_screen_hint),
             style = MaterialTheme.typography.h6
         )
         Spacer(modifier = Modifier.height(MaterialTheme.dimensions.spaceLarge))
@@ -64,13 +66,13 @@ fun HomeScaffold(name: String, remain: Int, percent: Float, done: Int, navigate:
         CustomCard(Modifier.fillMaxWidth()) {
             Row(modifier = Modifier.padding(MaterialTheme.padding.general)) {
                 Summary(
-                    time = done,
-                    title = "Прошло",
+                    time = past,
+                    title = stringResource(R.string.home_screen_past),
                     alignment = Alignment.Start
                 )
                 Summary(
-                    time = remain,
-                    title = "Осталось",
+                    time = left,
+                    title = stringResource(R.string.home_screen_left),
                     alignment = Alignment.End
                 )
             }
@@ -143,7 +145,7 @@ fun HomeTopBar(navigate: () -> Unit) {
             .fillMaxWidth()
             .padding(MaterialTheme.padding.topBar)
     ) {
-        TopBarTitle("Таймер")
+        TopBarTitle(stringResource(R.string.home_screen_top_bar_title))
 
         IconButton(
             modifier = Modifier.align(Alignment.CenterEnd),
@@ -169,12 +171,7 @@ fun RowScope.Summary(
         val minutes = ((time % 86400) % 3600) / 60
         val seconds = ((time % 86400) % 3600) % 60
 
-        val list = listOf(
-            "$days дней",
-            "$hours часов",
-            "$minutes минут",
-            "$seconds секунд"
-        )
+        val list = listOf(days, hours, minutes, seconds)
 
         Text(
             text = title,
@@ -183,8 +180,8 @@ fun RowScope.Summary(
         )
         Spacer(Modifier.height(MaterialTheme.dimensions.spaceSmall))
 
-        list.forEach {
-            Text(it)
+        list.forEachIndexed { i, it ->
+            Text(it.toString() + " " + stringArrayResource(R.array.home_screen_units)[i])
             Spacer(Modifier.height(MaterialTheme.dimensions.spaceMin))
         }
     }

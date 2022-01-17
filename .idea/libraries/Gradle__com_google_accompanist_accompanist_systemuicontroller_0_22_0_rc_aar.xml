@@ -13,9 +13,10 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3f2ef6b2b3ffa6a9cc677c1ce34739f2/transformed/accompanist-systemuicontroller-0.22.0-rc/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0c25cc513542869075286c0b77859e37/transformed/accompanist-systemuicontroller-0.22.0-rc/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0d098d9ac9a795e8f8a1c4ca7425dc2c/transformed/accompanist-systemuicontroller-0.22.0-rc/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4a4c07fc71725febdfd1be181e060795/transformed/accompanist-systemuicontroller-0.22.0-rc/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4a4c07fc71725febdfd1be181e060795/transformed/accompanist-systemuicontroller-0.22.0-rc/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/4a4c07fc71725febdfd1be181e060795/transformed/accompanist-systemuicontroller-0.22.0-rc/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2288ed22de034c4d166240919b64d690/transformed/accompanist-systemuicontroller-0.22.0-rc/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/2288ed22de034c4d166240919b64d690/transformed/accompanist-systemuicontroller-0.22.0-rc/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2288ed22de034c4d166240919b64d690/transformed/accompanist-systemuicontroller-0.22.0-rc/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.accompanist/accompanist-systemuicontroller/0.22.0-rc/f39d8c93f614a98bfb1af3a693019a1d8a218f0c/accompanist-systemuicontroller-0.22.0-rc-javadoc.jar!/" />

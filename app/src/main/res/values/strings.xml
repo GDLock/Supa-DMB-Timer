@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">Supa Gift</string>
+
+    <string name="home_screen_hint">идет к своей цели</string>
+    <string name="home_screen_past">Прошло</string>
+    <string name="home_screen_left">Осталось</string>
+    <string name="home_screen_top_bar_title">Таймер</string>
+    <string-array name="home_screen_units">
+        <item>дней</item>
+        <item>часов</item>
+        <item>минут</item>
+        <item>секунд</item>
+    </string-array>
+
+    <string name="settings_screen_top_bar_title">Настройки</string>
+    <string name="settings_screen_edit">Редактировать</string>
+    <string-array name="settings_screen_theme">
+        <item>Как в системе</item>
+        <item>Светлая тема</item>
+        <item>Темная тема</item>
+    </string-array>
+
+    <string name="person_screen_fab">СОХРАНИТЬ</string>
+    <string name="person_screen_label">Ваше имя</string>
+    <string name="person_screen_button">ВЫБОР ДАТЫ</string>
+
+
 </resources>

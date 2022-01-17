@@ -11,13 +11,14 @@ import androidx.compose.material.icons.outlined.Done
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringArrayResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.superdmbtimer.R
 import com.example.superdmbtimer.domain.model.Theme
-import com.example.superdmbtimer.domain.model.Theme.*
 import com.example.superdmbtimer.ui.components.BackButton
 import com.example.superdmbtimer.ui.components.CustomCard
 import com.example.superdmbtimer.ui.components.TopBarTitle
@@ -31,9 +32,9 @@ fun SettingsScreen(viewModel: SettingsViewModel = hiltViewModel()) {
 
     SettingsScaffold(
         theme = state,
-        onBackClick = {viewModel.action(SettingsAction.Back)},
-        onEditClick = {viewModel.action(SettingsAction.Edit)},
-        onSetTheme = {viewModel.action(SettingsAction.SetTheme(it))}
+        onBackClick = { viewModel.action(SettingsAction.Back) },
+        onEditClick = { viewModel.action(SettingsAction.Edit) },
+        onSetTheme = { viewModel.action(SettingsAction.SetTheme(it)) }
     )
 }
 
@@ -45,14 +46,12 @@ fun SettingsScaffold(
     onSetTheme: (Theme) -> Unit
 ) {
     Column(Modifier.fillMaxSize()) {
-        Box(
-            Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 8.dp)) {
+
+        Box(Modifier.fillMaxWidth().padding(horizontal = 8.dp)) {
 
             BackButton { onBackClick() }
 
-            TopBarTitle("Настройки")
+            TopBarTitle(stringResource(R.string.settings_screen_top_bar_title))
         }
 
         Spacer(Modifier.height(MaterialTheme.dimensions.spaceMedium))
@@ -63,15 +62,15 @@ fun SettingsScaffold(
                     .fillMaxWidth()
                     .clickable { onEditClick() }
                     .padding(MaterialTheme.padding.general),
-                text = "Редактировать")
+                text = stringResource(R.string.settings_screen_edit))
         }
 
         CustomCard {
             Column {
-                Theme.values().forEach {
+                Theme.values().forEachIndexed { i, it ->
                     ThemeSelector(
-                        theme = it,
-                        current = theme,
+                        title = stringArrayResource(R.array.settings_screen_theme)[i],
+                        isCurrent = it == theme,
                         onClick = { onSetTheme(it) }
                     )
                     if (it != Theme.values().last())
@@ -84,17 +83,10 @@ fun SettingsScaffold(
 
 @Composable
 fun ThemeSelector(
-    theme: Theme,
-    current: Theme,
+    title: String,
+    isCurrent: Boolean,
     onClick: () -> Unit
 ) {
-    val title = remember {
-        when (theme) {
-            LIKE_SYSTEM -> "Как в системе"
-            LIGHT -> "Светлая тема"
-            DARK -> "Темная тема"
-        }
-    }
     Row(modifier = Modifier
         .height(IntrinsicSize.Max)
         .clickable { onClick() }
@@ -105,7 +97,7 @@ fun ThemeSelector(
             modifier = Modifier.weight(1f),
             text = title
         )
-        if (theme == current)
+        if (isCurrent)
             Icon(imageVector = Icons.Outlined.Done, contentDescription = null)
     }
 }

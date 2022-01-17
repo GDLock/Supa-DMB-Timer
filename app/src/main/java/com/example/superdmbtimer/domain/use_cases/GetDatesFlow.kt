@@ -14,5 +14,5 @@ class GetDatesFlowUseCase @Inject constructor(
     @EndPref private val endPref: DataStorePref<Int>,
 ) {
     operator fun invoke() =
-        combine(startPref.value.onEach { Log.d("Start", it.toString()) }, endPref.value.onEach { Log.d("End", it.toString()) }) { start, end -> PersonDate(start, end) }
+        combine(startPref.value, endPref.value) { start, end -> PersonDate(start, end) }
 }

@@ -29,7 +29,7 @@ class PersonViewModel @Inject constructor(
     val uiEffect = _uiEffect.receiveAsFlow()
 
     override val state = combine(name, date) { name, date ->
-        PersonViewState(name, date, initialName.isNotEmpty())
+        PersonViewState(name, date, initialName.isNotEmpty(), true)
     }.stateInit()
 
     init {

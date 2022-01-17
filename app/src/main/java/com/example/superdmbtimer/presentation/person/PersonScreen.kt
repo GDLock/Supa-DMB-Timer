@@ -7,9 +7,11 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.superdmbtimer.R
 import com.example.superdmbtimer.domain.model.PersonDate
 import com.example.superdmbtimer.presentation.person.component.DatePickerView
 import com.example.superdmbtimer.ui.components.BackButton
@@ -27,6 +29,7 @@ fun PersonScreen(viewModel: PersonViewModel = hiltViewModel()) {
         date = state.date,
         buttonEnabled = state.buttonEnabled,
         backEnabled = state.backEnabled,
+        isLoaded = state.isLoaded,
         uiEffect = viewModel.uiEffect,
         openSheet = { viewModel.effect(UIEffect.OpenSheet) },
         action = viewModel::action
@@ -42,7 +45,8 @@ fun PersonLayout(
     uiEffect: Flow<UIEffect>,
     backEnabled: Boolean,
     action: (PersonAction) -> Unit,
-    openSheet: () -> Unit
+    openSheet: () -> Unit,
+    isLoaded: Boolean
 ) {
     val sheetState = rememberModalBottomSheetState(ModalBottomSheetValue.Hidden)
     val focusManager = LocalFocusManager.current
@@ -61,6 +65,7 @@ fun PersonLayout(
     BottomSheetLayout(
         sheetState = sheetState,
         sheetContent = {
+            if (isLoaded)
             DatePickerView(
                 start = date.start,
                 end = date.end,
@@ -69,6 +74,7 @@ fun PersonLayout(
                     action(PersonAction.SetDate(PersonDate(start, end)))
                 }
             )
+            else Text("")
         }
     ) {
         val dateText = remember(date) { date.getDate() }
@@ -88,7 +94,7 @@ fun PersonLayout(
                         .align(Alignment.BottomCenter)
                         .fillMaxWidth()
                         .padding(MaterialTheme.padding.general),
-                    text = { Text("СОХРАНИТЬ") },
+                    text = { Text(stringResource(R.string.person_screen_fab)) },
                     onClick = { action(PersonAction.Navigate) }
                 )
         }
@@ -134,13 +140,13 @@ fun PersonContent(
             value = name,
             onValueChange = onNameChange,
             keyboardOptions = KeyboardOptions(KeyboardCapitalization.Sentences),
-            label = { Text("Ваше имя") }
+            label = { Text(stringResource(R.string.person_screen_label)) }
         )
 
         Spacer(modifier = Modifier.height(8.dp))
 
         Button(onClick = openSheet) {
-            Text(date.ifEmpty { "ВЫБОР ДАТЫ" })
+            Text(date.ifEmpty { stringResource(R.string.person_screen_button)})
         }
     }
 }

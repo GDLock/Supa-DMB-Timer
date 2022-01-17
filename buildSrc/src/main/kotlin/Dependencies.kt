@@ -1,14 +1,13 @@
 object Dependencies {
 
     object Compose {
-        const val version = "1.1.0-rc01"
-        const val compilerV = "1.1.0-rc02"
+        const val version = "1.2.0-alpha01"
 
         const val ui = "androidx.compose.ui:ui:$version"
         const val ui_tooling = "androidx.compose.ui:ui-tooling:$version"
         const val foundation = "androidx.compose.foundation:foundation:$version"
         const val runtime = "androidx.compose.runtime:runtime:$version"
-        const val compiler = "androidx.compose.compiler:compiler:$compilerV"
+        const val compiler = "androidx.compose.compiler:compiler:$version"
         const val animation = "androidx.compose.animation:animation:$version"
         const val material_icon = "androidx.compose.material:material-icons-extended:$version"
         const val material = "androidx.compose.material:material:$version"

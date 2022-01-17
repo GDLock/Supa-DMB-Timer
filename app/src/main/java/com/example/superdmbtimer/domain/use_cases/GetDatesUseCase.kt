@@ -4,6 +4,7 @@ import com.example.superdmbtimer.data.DataStorePref
 import com.example.superdmbtimer.data.EndPref
 import com.example.superdmbtimer.data.StartPref
 import com.example.superdmbtimer.domain.model.PersonDate
+import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
@@ -16,14 +17,9 @@ class GetDatesUseCase @Inject constructor(
 ) {
     suspend operator fun invoke(): PersonDate {
         return coroutineScope {
-            var start = 0
-            var end = 0
-
-            val job1 = launch { start = startPref.value.first()}
-            val job2 = launch { end = endPref.value.first()}
-            job1.join()
-            job2.join()
-            PersonDate(start, end)
+            val start = async { startPref.value.first()}
+            val end = async{ endPref.value.first()}
+            PersonDate(start.await(), end.await())
         }
     }
 }

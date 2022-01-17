@@ -1,0 +1,27 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.accompanist:accompanist-navigation-animation:0.22.0-rc@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c3a009b63121622590f861f6ea494285/transformed/accompanist-navigation-animation-0.22.0-rc/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/e146819a2ff2176805c28f8741efcdfb/transformed/accompanist-navigation-animation-0.22.0-rc/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/312582afcd6ddbeb23f77368ae741238/transformed/accompanist-navigation-animation-0.22.0-rc/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/15322d54dbc1c28f9bbf67f73fd0a9ea/transformed/accompanist-navigation-animation-0.22.0-rc/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b1f81578dcda4cb736bf94241f313c8e/transformed/accompanist-navigation-animation-0.22.0-rc/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/d54c7140f5da6b00aa17a4de032245d4/transformed/accompanist-navigation-animation-0.22.0-rc/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/d22ae6e836f386dfdf5c099c0805324d/transformed/accompanist-navigation-animation-0.22.0-rc/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/eb31f3a45afaf616b652b8547ec4dd7a/transformed/accompanist-navigation-animation-0.22.0-rc/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/66d0bf71ddf922fe9a7306cd936264db/transformed/accompanist-navigation-animation-0.22.0-rc/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/02c1cac399d1e0690ba1b7b837a63796/transformed/accompanist-navigation-animation-0.22.0-rc/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/33ea83c8871baaf94103c40fd51b7b14/transformed/accompanist-navigation-animation-0.22.0-rc/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b4adef4b881edbf5d4bfe0285a278def/transformed/accompanist-navigation-animation-0.22.0-rc/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/017c82b1569e86acb3e19ebd56158fbe/transformed/accompanist-navigation-animation-0.22.0-rc/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/017c82b1569e86acb3e19ebd56158fbe/transformed/accompanist-navigation-animation-0.22.0-rc/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/017c82b1569e86acb3e19ebd56158fbe/transformed/accompanist-navigation-animation-0.22.0-rc/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.accompanist/accompanist-navigation-animation/0.22.0-rc/bc7f1fc187a068fba54e0ec93fbcb368e06f887b/accompanist-navigation-animation-0.22.0-rc-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.accompanist/accompanist-navigation-animation/0.22.0-rc/948a247758253cc9ee5828e5c8bdcbaf21aeaecc/accompanist-navigation-animation-0.22.0-rc-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

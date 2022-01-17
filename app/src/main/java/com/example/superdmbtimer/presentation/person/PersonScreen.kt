@@ -10,7 +10,7 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.superdmbtimer.core.BottomSheetLayout
+import com.example.superdmbtimer.ui.components.BottomSheetLayout
 import com.example.superdmbtimer.domain.model.PersonDate
 import com.example.superdmbtimer.presentation.person.component.DatePickerView
 import com.example.superdmbtimer.ui.components.BackButton

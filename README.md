@@ -1,1 +1,4 @@
-![Screenshot_20220117-162026](https://user-images.githubusercontent.com/57265286/149763879-b2f69cae-bead-4dfe-afdb-049e276ce783.png)![Screenshot_20220117-164208](https://user-images.githubusercontent.com/57265286/149763895-cf880bb3-6ba9-4ed3-96ff-3b579a684210.png)![Screenshot_20220117-162039](https://user-images.githubusercontent.com/57265286/149763910-35c2f0f2-d9dd-4afd-b6e7-ab7e12d8d14e.png)![Screenshot_20220117-162039](https://user-images.githubusercontent.com/57265286/149764018-b9f44cdf-284d-49c4-a5bf-0567a5702b5f.png)
+<img align="left" width="220" height="480" src="https://user-images.githubusercontent.com/57265286/149763879-b2f69cae-bead-4dfe-afdb-049e276ce783.png">
+<img align="left" width="220" height="480" src="https://user-images.githubusercontent.com/57265286/149764722-edada6e5-8bcb-4144-9fa9-008d5b553cbb.png">
+<img align="left" width="220" height="480" src="https://user-images.githubusercontent.com/57265286/149764765-f560a13c-383d-41a3-ad71-5995629fdc49.png">
+<img align="left" width="220" height="480" src="https://user-images.githubusercontent.com/57265286/149764796-b2193b1d-8178-4da4-b90f-3e948a3b9037.png">

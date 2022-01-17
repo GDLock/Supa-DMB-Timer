@@ -1,3 +1,5 @@
+Шуточный таймер созданный для друга в армии.
+
 <img align="left" width="220" height="480" src="https://user-images.githubusercontent.com/57265286/149763879-b2f69cae-bead-4dfe-afdb-049e276ce783.png">
 <img align="left" width="220" height="480" src="https://user-images.githubusercontent.com/57265286/149764722-edada6e5-8bcb-4144-9fa9-008d5b553cbb.png">
 <img align="left" width="220" height="480" src="https://user-images.githubusercontent.com/57265286/149764765-f560a13c-383d-41a3-ad71-5995629fdc49.png">

@@ -10,10 +10,10 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.superdmbtimer.ui.components.BottomSheetLayout
 import com.example.superdmbtimer.domain.model.PersonDate
 import com.example.superdmbtimer.presentation.person.component.DatePickerView
 import com.example.superdmbtimer.ui.components.BackButton
+import com.example.superdmbtimer.ui.components.BottomSheetLayout
 import com.example.superdmbtimer.ui.theme.padding
 import kotlinx.coroutines.flow.Flow
 
@@ -29,12 +29,7 @@ fun PersonScreen(viewModel: PersonViewModel = hiltViewModel()) {
         backEnabled = state.backEnabled,
         uiEffect = viewModel.uiEffect,
         openSheet = { viewModel.effect(UIEffect.OpenSheet) },
-        onNameChange = { viewModel.action(PersonAction.SetName(it)) },
-        onDateChange = { start, end ->
-            viewModel.action(PersonAction.SetDate(PersonDate(start, end)))
-        },
-        onBackClick = { viewModel.action(PersonAction.Back) },
-        onButtonClick = { viewModel.action(PersonAction.Navigate) }
+        action = viewModel::action
     )
 }
 
@@ -44,13 +39,10 @@ fun PersonLayout(
     name: String,
     date: PersonDate,
     buttonEnabled: Boolean,
-    onNameChange: (String) -> Unit,
-    onDateChange: (Int, Int) -> Unit,
-    onButtonClick: () -> Unit,
-    openSheet: () -> Unit,
     uiEffect: Flow<UIEffect>,
     backEnabled: Boolean,
-    onBackClick: () -> Unit
+    action: (PersonAction) -> Unit,
+    openSheet: () -> Unit
 ) {
     val sheetState = rememberModalBottomSheetState(ModalBottomSheetValue.Hidden)
     val focusManager = LocalFocusManager.current
@@ -73,18 +65,21 @@ fun PersonLayout(
                 start = date.start,
                 end = date.end,
                 isRange = true,
-                onDateRangeChange = onDateChange
+                onDateRangeChange = { start, end ->
+                    action(PersonAction.SetDate(PersonDate(start, end)))
+                }
             )
-        }) {
+        }
+    ) {
         val dateText = remember(date) { date.getDate() }
         Box {
             PersonScaffold(
                 name = name,
-                onNameChange = onNameChange,
+                onNameChange = { action(PersonAction.SetName(it)) },
                 date = dateText,
                 openSheet = openSheet,
                 backEnabled = backEnabled,
-                onBackClick = onBackClick
+                onBackClick = { action(PersonAction.Back) }
             )
 
             if (buttonEnabled)
@@ -94,7 +89,7 @@ fun PersonLayout(
                         .fillMaxWidth()
                         .padding(MaterialTheme.padding.general),
                     text = { Text("СОХРАНИТЬ") },
-                    onClick = onButtonClick
+                    onClick = { action(PersonAction.Navigate) }
                 )
         }
     }

@@ -3,8 +3,6 @@ package com.example.superdmbtimer.presentation.person
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBackIosNew
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -18,7 +16,6 @@ import com.example.superdmbtimer.presentation.person.component.DatePickerView
 import com.example.superdmbtimer.ui.components.BackButton
 import com.example.superdmbtimer.ui.theme.padding
 import kotlinx.coroutines.flow.Flow
-import java.util.*
 
 @Composable
 fun PersonScreen(viewModel: PersonViewModel = hiltViewModel()) {
@@ -91,13 +88,14 @@ fun PersonLayout(
             )
 
             if (buttonEnabled)
-            ExtendedFloatingActionButton(
-                modifier = Modifier.align(Alignment.BottomCenter)
-                    .fillMaxWidth()
-                    .padding(MaterialTheme.padding.general),
-                text = { Text("СОХРАНИТЬ") },
-                onClick = onButtonClick
-            )
+                ExtendedFloatingActionButton(
+                    modifier = Modifier
+                        .align(Alignment.BottomCenter)
+                        .fillMaxWidth()
+                        .padding(MaterialTheme.padding.general),
+                    text = { Text("СОХРАНИТЬ") },
+                    onClick = onButtonClick
+                )
         }
     }
 }
@@ -112,10 +110,10 @@ fun PersonScaffold(
     onBackClick: () -> Unit
 ) {
     if (backEnabled)
-    BackButton(
-        modifier = Modifier.padding(MaterialTheme.padding.topBar),
-        onClick = onBackClick
-    )
+        BackButton(
+            modifier = Modifier.padding(MaterialTheme.padding.topBar),
+            onClick = onBackClick
+        )
 
     PersonContent(
         name = name,

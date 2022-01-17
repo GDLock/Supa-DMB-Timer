@@ -34,9 +34,11 @@ class PersonViewModel @Inject constructor(
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
-            initialName = personUseCases.getNameUseCase()
-            name.value = initialName
-            date.value = personUseCases.getDatesUseCase()
+            launch {
+                initialName = personUseCases.getNameUseCase()
+                name.value = initialName
+            }
+            launch { date.value = personUseCases.getDatesUseCase() }
         }
     }
 
